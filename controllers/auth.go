@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"gin-framework-use/internal/utils"
 	"gin-framework-use/services"
 
 	"github.com/gin-gonic/gin"
@@ -74,12 +75,21 @@ func (a *AuthController) Login() gin.HandlerFunc {
 		user, err := a.authService.Login(&register.Email, &register.Password)
 		if err != nil {
 			c.JSON(404, gin.H{
-				"message": err.Error(),
+				"error": err.Error(),
+			})
+			return
+		}
+
+		token, err := utils.GenerateToken(user.Email,user.Id)
+		if err != nil {
+			c.JSON(404, gin.H{
+				"error": err.Error(),
 			})
 			return
 		}
 		c.JSON(200, gin.H{
 			"message": user,
+			"token":token,
 		})
 		return
 	}

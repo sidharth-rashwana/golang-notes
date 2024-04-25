@@ -3,7 +3,7 @@ package controllers
 import (
 	"gin-framework-use/services"
 	"strconv"
-
+	"gin-framework-use/internal/middleware"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,6 +18,7 @@ func (n *NotesController) InitController(notesService services.NotesService) *No
 
 func (n *NotesController) InitRoutes(router *gin.Engine) {
 	notes := router.Group("/notes")
+	notes.Use(middleware.CheckMiddleware)
 	notes.GET("/", n.GetNotes())
 	notes.GET("/:id", n.GetNote())
 	notes.POST("/", n.CreateNotes())
