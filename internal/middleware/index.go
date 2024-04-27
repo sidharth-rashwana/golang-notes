@@ -2,7 +2,9 @@ package middleware
 
 import (
 	"fmt"
+	"gin-framework-use/internal/utils"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,4 +19,21 @@ func CheckMiddleware(c *gin.Context) {
 		})
 		return
 	}
+
+	token := strings.Split(headers, " ")
+	if len(token) < 2 {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+			"error": "Token not provided",
+		})
+		return
+	}
+
+	err := utils.TokenCheck(token[1])
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+			"error": "claims not matched",
+		})
+		return
+	}
+	c.Next()
 }

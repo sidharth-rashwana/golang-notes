@@ -23,3 +23,34 @@ func GenerateToken(email string, id int) (string, error) {
 
 	return tokenStr, nil
 }
+
+func parseToken(jwtToken string) (*jwt.Token, error) {
+	token, err := jwt.Parse(jwtToken, func(token *jwt.Token) (interface{}, error) {
+		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, errors.New("bad signed method received")
+		}
+		return []byte(secret), nil
+	})
+
+	if err != nil {
+		return nil, errors.New("bad jwt token")
+	}
+
+	if !token.Valid {
+		return nil, errors.New("invalid token")
+	}
+
+	return token, nil
+}
+
+func TokenCheck(jwtToken string) error {
+	token, err := parseToken(jwtToken)
+	if err != nil {
+		return err
+	}
+	_, ok := token.Claims.(jwt.MapClaims)
+	if !ok {
+		return errors.New("unable to map claims")
+	}
+	return nil // Token is successfully parsed and claims are mapped
+}

@@ -1,11 +1,30 @@
+version: '3.8'
+
 services:
   db:
     container_name: my_db
     image: postgres
     restart: always
     ports:
-     - "5432:5432"
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
+    networks:
+      - my_network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+networks:
+  my_network:
