@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/sidharth-rashwana/notes-app/internal/utils"
+	"github.com/sidharth-rashwana/golang-notes/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

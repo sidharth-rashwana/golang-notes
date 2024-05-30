@@ -1,4 +1,4 @@
-module github.com/sidharth-rashwana/notes-app
+module github.com/sidharth-rashwana/golang-notes
 
 go 1.21.7
 

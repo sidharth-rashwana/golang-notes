@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/sidharth-rashwana/notes-app/controllers"
-	"github.com/sidharth-rashwana/notes-app/services"
+	"github.com/sidharth-rashwana/golang-notes/controllers"
+	"github.com/sidharth-rashwana/golang-notes/services"
 
-	internal "github.com/sidharth-rashwana/notes-app/internal/database"
+	internal "github.com/sidharth-rashwana/golang-notes/internal/database"
 
 	"github.com/gin-gonic/gin"
 )

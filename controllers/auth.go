@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/sidharth-rashwana/notes-app/internal/utils"
-	"github.com/sidharth-rashwana/notes-app/services"
+	"github.com/sidharth-rashwana/golang-notes/internal/utils"
+	"github.com/sidharth-rashwana/golang-notes/services"
 
 	"github.com/gin-gonic/gin"
 )

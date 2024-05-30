@@ -3,8 +3,8 @@ package controllers
 import (
 	"strconv"
 
-	"github.com/sidharth-rashwana/notes-app/internal/middleware"
-	"github.com/sidharth-rashwana/notes-app/services"
+	"github.com/sidharth-rashwana/golang-notes/internal/middleware"
+	"github.com/sidharth-rashwana/golang-notes/services"
 
 	"github.com/gin-gonic/gin"
 )

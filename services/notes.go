@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	internal "github.com/sidharth-rashwana/notes-app/internal/model"
+	internal "github.com/sidharth-rashwana/golang-notes/internal/model"
 
 	"gorm.io/gorm"
 )

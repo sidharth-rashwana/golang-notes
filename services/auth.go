@@ -3,8 +3,8 @@ package services
 import (
 	"errors"
 
-	"github.com/sidharth-rashwana/notes-app/internal/model"
-	internal "github.com/sidharth-rashwana/notes-app/internal/utils"
+	"github.com/sidharth-rashwana/golang-notes/internal/model"
+	internal "github.com/sidharth-rashwana/golang-notes/internal/utils"
 
 	"gorm.io/gorm"
 )
