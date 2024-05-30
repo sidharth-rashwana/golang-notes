@@ -3,7 +3,8 @@ package services
 import (
 	"errors"
 	"fmt"
-	internal "gin-framework-use/internal/model"
+
+	internal "github.com/sidharth-rashwana/notes-app/internal/model"
 
 	"gorm.io/gorm"
 )

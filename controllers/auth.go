@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"gin-framework-use/internal/utils"
-	"gin-framework-use/services"
+	"github.com/sidharth-rashwana/notes-app/internal/utils"
+	"github.com/sidharth-rashwana/notes-app/services"
 
 	"github.com/gin-gonic/gin"
 )
@@ -80,7 +80,7 @@ func (a *AuthController) Login() gin.HandlerFunc {
 			return
 		}
 
-		token, err := utils.GenerateToken(user.Email,user.Id)
+		token, err := utils.GenerateToken(user.Email, user.Id)
 		if err != nil {
 			c.JSON(404, gin.H{
 				"error": err.Error(),
@@ -88,8 +88,7 @@ func (a *AuthController) Login() gin.HandlerFunc {
 			return
 		}
 		c.JSON(200, gin.H{
-			"message": user,
-			"token":token,
+			"token": token,
 		})
 		return
 	}

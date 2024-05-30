@@ -1,9 +1,11 @@
 package controllers
 
 import (
-	"gin-framework-use/services"
 	"strconv"
-	"gin-framework-use/internal/middleware"
+
+	"github.com/sidharth-rashwana/notes-app/internal/middleware"
+	"github.com/sidharth-rashwana/notes-app/services"
+
 	"github.com/gin-gonic/gin"
 )
 

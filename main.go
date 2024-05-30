@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gin-framework-use/controllers"
-	"gin-framework-use/services"
+	"github.com/sidharth-rashwana/notes-app/controllers"
+	"github.com/sidharth-rashwana/notes-app/services"
 
-	internal "gin-framework-use/internal/database"
+	internal "github.com/sidharth-rashwana/notes-app/internal/database"
 
 	"github.com/gin-gonic/gin"
 )

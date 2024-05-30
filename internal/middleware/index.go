@@ -2,9 +2,10 @@ package middleware
 
 import (
 	"fmt"
-	"gin-framework-use/internal/utils"
 	"net/http"
 	"strings"
+
+	"github.com/sidharth-rashwana/notes-app/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,4 +1,4 @@
-module gin-framework-use
+module github.com/sidharth-rashwana/notes-app
 
 go 1.21.7
 
